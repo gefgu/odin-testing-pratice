@@ -1,4 +1,4 @@
-import { capitalize } from "./index";
+import { capitalize, reverseString } from "./index";
 
 // Capitalize
 
