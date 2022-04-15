@@ -17,4 +17,37 @@ const calculator = {
   divide: (a, b) => a / b,
 };
 
-export { capitalize, reverseString, calculator };
+const caesarCipher = (str, shift) => {
+  const convertChar = (char) => {
+    const lowerCaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase();
+    const upperCaseAlphabet = lowerCaseAlphabet.toUpperCase();
+
+    let isLowerCase = lowerCaseAlphabet.indexOf(char) === -1 ? false : true;
+    if (isLowerCase) {
+      let newIndex = lowerCaseAlphabet.indexOf(char) + shift;
+      if (newIndex >= lowerCaseAlphabet.length) {
+        newIndex = newIndex - lowerCaseAlphabet.length;
+      }
+      return lowerCaseAlphabet[newIndex];
+    } else {
+      let isUpperCase = upperCaseAlphabet.indexOf(char) === -1 ? false : true;
+      if (isUpperCase) {
+        let newIndex = upperCaseAlphabet.indexOf(char) + shift;
+        if (newIndex >= upperCaseAlphabet.length) {
+          newIndex = newIndex - upperCaseAlphabet.length;
+        }
+        return upperCaseAlphabet[newIndex];
+      } else {
+        return char;
+      }
+    }
+  };
+
+  let newString = "";
+  str.split("").forEach((char) => {
+    newString += convertChar(char);
+  });
+  return newString;
+};
+
+export { capitalize, reverseString, calculator, caesarCipher };

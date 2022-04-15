@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./index";
+import { capitalize, reverseString, calculator, caesarCipher } from "./index";
 
 // Capitalize
 
@@ -85,8 +85,12 @@ test("Capitalized text", () => {
   expect(caesarCipher("Attack at Dawn", 1)).toBe("Buubdl bu Ebxo");
 });
 
-test("Z to A", () => {
+test("z to a", () => {
   expect(caesarCipher("zebra", 1)).toBe("afcsb");
+});
+
+test("Z to A", () => {
+  expect(caesarCipher("Zebra", 1)).toBe("Afcsb");
 });
 
 test("Ponctuation", () => {
@@ -95,4 +99,8 @@ test("Ponctuation", () => {
 
 test("Different Key", () => {
   expect(caesarCipher("abcdf", 5)).toBe("fghik");
+})
+
+test("Different Key A-Z", () => {
+  expect(caesarCipher("Zbcdf", 5)).toBe("Eghik");
 })
