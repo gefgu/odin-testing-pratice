@@ -5,7 +5,7 @@ test("Simple capitalization", () => {
 });
 
 test("Already Capitalized", () => {
-  expect(capitalize("Gustavo")).toBe("Gustavo");
+  expect(capitalize("Food")).toBe("Food");
 });
 
 test("Crazy Capitalized Word", () => {
