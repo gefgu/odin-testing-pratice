@@ -73,3 +73,26 @@ test("Divide with 1 negative number", () => {
 test("Divide with both negative numbers", () => {
   expect(calculator.divide(-30, -10)).toBe(3);
 });
+
+
+// Ceaser Cipher
+
+test("Plain text", () => {
+  expect(caesarCipher("abcdfg", 1)).toBe("bcdegh");
+});
+
+test("Capitalized text", () => {
+  expect(caesarCipher("Attack at Dawn", 1)).toBe("Buubdl bu Ebxo");
+});
+
+test("Z to A", () => {
+  expect(caesarCipher("zebra", 1)).toBe("afcsb");
+});
+
+test("Ponctuation", () => {
+  expect(caesarCipher("food?", 1)).toBe("gppe?");
+});
+
+test("Different Key", () => {
+  expect(caesarCipher("abcdf", 5)).toBe("fghik");
+})
