@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./index";
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./index";
 
 // Capitalize
 
@@ -115,7 +115,7 @@ test("Crazy Capitalized", () => {
 // Analyze Array
 
 test("1-5 array", () => {
-  expect(analyzeArray([1, 2, 3, 4, 5])).toBe({
+  expect(analyzeArray([1, 2, 3, 4, 5])).toStrictEqual({
     average: 3,
     min: 1,
     max: 5,
@@ -124,7 +124,7 @@ test("1-5 array", () => {
 });
 
 test("1 element array", () => {
-  expect(analyzeArray([3])).toBe({
+  expect(analyzeArray([3])).toStrictEqual({
     average: 3,
     min: 3,
     max: 3,
@@ -133,7 +133,7 @@ test("1 element array", () => {
 });
 
 test("random array", () => {
-  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toBe({
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toStrictEqual({
     average: 4,
     min: 1,
     max: 8,
@@ -142,7 +142,7 @@ test("random array", () => {
 });
 
 test("array with negative numbers", () => {
-  expect(analyzeArray([1, 2, -3, 4, 5])).toBe({
+  expect(analyzeArray([1, 2, -3, 4, 5])).toStrictEqual({
     average: 1.8,
     min: -3,
     max: 5,

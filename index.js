@@ -50,4 +50,23 @@ const caesarCipher = (str, shift) => {
   return newString;
 };
 
-export { capitalize, reverseString, calculator, caesarCipher };
+const analyzeArray = (arr) => {
+  return {
+    average: arr.reduce((prev, curr) => prev + curr, 0) / arr.length,
+    min: arr.reduce((prev, curr) => {
+      if (prev < curr) {
+        return prev;
+      }
+      return curr;
+    }, +Infinity),
+    max: arr.reduce((prev, curr) => {
+      if (prev > curr) {
+        return prev;
+      }
+      return curr;
+    }, -Infinity),
+    length: arr.length,
+  };
+};
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
