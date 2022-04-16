@@ -74,7 +74,6 @@ test("Divide with both negative numbers", () => {
   expect(calculator.divide(-30, -10)).toBe(3);
 });
 
-
 // Ceaser Cipher
 
 test("Plain text", () => {
@@ -99,16 +98,54 @@ test("Ponctuation", () => {
 
 test("Different Key", () => {
   expect(caesarCipher("abcdf", 5)).toBe("fghik");
-})
+});
 
 test("Different Key A-Z", () => {
   expect(caesarCipher("Zbcdf", 5)).toBe("Eghik");
-})
+});
 
 test("Different Key Ponctuation", () => {
   expect(caesarCipher("Zbcdf!", 5)).toBe("Eghik!");
-})
+});
 
 test("Crazy Capitalized", () => {
   expect(caesarCipher("HeY ThERe!", 2)).toBe("JgA VjGTg!");
-})
+});
+
+// Analyze Array
+
+test("1-5 array", () => {
+  expect(analyzeArray([1, 2, 3, 4, 5])).toBe({
+    average: 3,
+    min: 1,
+    max: 5,
+    length: 5,
+  });
+});
+
+test("1 element array", () => {
+  expect(analyzeArray([3])).toBe({
+    average: 3,
+    min: 3,
+    max: 3,
+    length: 1,
+  });
+});
+
+test("random array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toBe({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
+
+test("array with negative numbers", () => {
+  expect(analyzeArray([1, 2, -3, 4, 5])).toBe({
+    average: 1.8,
+    min: -3,
+    max: 5,
+    length: 5,
+  });
+});
