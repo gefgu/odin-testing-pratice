@@ -104,3 +104,11 @@ test("Different Key", () => {
 test("Different Key A-Z", () => {
   expect(caesarCipher("Zbcdf", 5)).toBe("Eghik");
 })
+
+test("Different Key Ponctuation", () => {
+  expect(caesarCipher("Zbcdf!", 5)).toBe("Eghik!");
+})
+
+test("Crazy Capitalized", () => {
+  expect(caesarCipher("HeY ThERe!", 2)).toBe("JgA VjGTg!");
+})
